@@ -27,7 +27,9 @@ const errorMessage = (message, status) => {
 };
 
 export const getProducts = async () => {
+  console.log("URI", URI)
   const response = await fetch(`${URI}/products`);
+  console.log("response", response);
   if (!response.ok) {
     errorMessage("Failed to fetch products.", response.status);
   }
@@ -35,6 +37,7 @@ export const getProducts = async () => {
 };
 
 export const getProduct = async (id) => {
+  console.log("URI", URI)
   const response = await fetch(`${URI}/products/${id}`);
   if (!response.ok) {
     errorMessage("Bad request", response.status);
